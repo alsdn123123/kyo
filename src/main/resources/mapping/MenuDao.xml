@@ -13,13 +13,14 @@
         <result column="CREATE_TIME" property="createTime"/>
         <result column="UPDATE_TIME" property="updateTime"/>
         <result column="SORT" property="sort" jdbcType="INTEGER"/>
+        <result column="MENU_ROLE" property="menuRole" jdbcType="INTEGER"/>
     </resultMap>
 
     <sql id="table_name">tb_meun</sql>
-    <sql id="all_columns">ID,MENU_NAME,MENU_CODE,MENU_LEVEL,PARENT_CODE,URL,STATUS,ICON,CREATE_TIME,UPDATE_TIME,SORT</sql>
+    <sql id="all_columns">ID,MENU_NAME,MENU_CODE,MENU_LEVEL,PARENT_CODE,URL,STATUS,ICON,CREATE_TIME,UPDATE_TIME,SORT,MENU_ROLE</sql>
     <insert id="insert" parameterType="com.example.springbootdemo.domain.Menu">
       insert into <include refid="table_name"/> (<include refid="all_columns"/>)
-        values (#{id},#{menuName},#{menuCode},#{menuLevel},#{parentCode},#{url},#{status},#{icon},now(),now(),#{SORT})
+        values (#{id},#{menuName},#{menuCode},#{menuLevel},#{parentCode},#{url},#{status},#{icon},now(),now(),#{sort},#{menuRole})
     </insert>
     <select id="getMenuByList" resultMap="resultMap">
       select <include refid="all_columns"/>

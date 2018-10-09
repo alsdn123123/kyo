@@ -15,7 +15,7 @@ public class Admin implements Serializable {
     /**手机*/
     private String mobile;
     /**管理员等级*/
-    private Integer adminLevel;
+    private Integer adminRole;
     /**创建时间*/
     private Date createTime;
     /**更新时间*/
@@ -63,12 +63,12 @@ public class Admin implements Serializable {
         this.mobile = mobile;
     }
 
-    public Integer getAdminLevel() {
-        return adminLevel;
+    public Integer getAdminRole() {
+        return adminRole;
     }
 
-    public void setAdminLevel(Integer adminLevel) {
-        this.adminLevel = adminLevel;
+    public void setAdminRole(Integer adminRole) {
+        this.adminRole = adminRole;
     }
 
     public Date getCreateTime() {

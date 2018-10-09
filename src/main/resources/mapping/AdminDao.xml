@@ -7,13 +7,13 @@
         <result column="login_name" property="loginName" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
         <result column="mobile" property="mobile" jdbcType="VARCHAR"/>
-        <result column="admin_level" property="adminLevel" jdbcType="INTEGER"/>
+        <result column="admin_role" property="adminRole" jdbcType="INTEGER"/>
         <result column="create_time" property="createTime"/>
         <result column="update_time" property="updateTime"/>
         <result column="last_login_time" property="lastLoginTime"/>
     </resultMap>
     <sql id="table_name">tb_admin</sql>
-    <sql id="all_columns">id,login_code,login_name,password,mobile,admin_level,create_time,update_time,last_login_time</sql>
+    <sql id="all_columns">id,login_code,login_name,password,mobile,admin_role,create_time,update_time,last_login_time</sql>
 
     <select id="getAdminList"  resultMap="resultMap">
         SELECT <include refid="all_columns"/>

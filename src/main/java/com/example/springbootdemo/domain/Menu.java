@@ -26,6 +26,8 @@ public class Menu implements Serializable {
     private Date updateTime;
     /**顺序*/
     private Integer sort;
+    /**菜单权限*/
+    private Integer menuRole;
 
     private List<Menu> menuList;
 
@@ -124,5 +126,13 @@ public class Menu implements Serializable {
 
     public void setMenuList(List<Menu> menuList) {
         this.menuList = menuList;
+    }
+
+    public Integer getMenuRole() {
+        return menuRole;
+    }
+
+    public void setMenuRole(Integer menuRole) {
+        this.menuRole = menuRole;
     }
 }
