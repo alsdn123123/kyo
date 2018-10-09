@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.springbootdemo.mapper.AdminDao" >
+    <resultMap id="resultMap" type="com.example.springbootdemo.domain.Admin">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="user_name" property="userName" jdbcType="VARCHAR" />
+        <result column="login_name" property="loginName" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="mobile" property="mobile" jdbcType="VARCHAR"/>
+        <result column="admin_level" property="adminLevel" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="last_login_time" property="lastLoginTime"/>
+    </resultMap>
+    <sql id="table_name">tb_admin</sql>
+    <sql id="all_columns">id,user_name,login_name,password,mobile,admin_level,create_time,update_time,last_login_time</sql>
+
+    <select id="getAdminList"  resultMap="resultMap">
+        SELECT <include refid="all_columns"/>
+        FROM <include refid="table_name"/>
+  </select>
+</mapper>
+
