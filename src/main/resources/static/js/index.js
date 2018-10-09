@@ -1,4 +1,4 @@
-var prefixUrl = "http://localhost:8080/hjy/";
+var prefixUrl = "http://localhost:8089/";
 //JavaScript代码区域
 layui.use(['layer', 'element'], function(){
     var element = layui.element,layer = layui.layer;;
@@ -9,10 +9,7 @@ layui.use(['layer', 'element'], function(){
 var vm = new Vue({
     el:"#index",
     data:{
-        admin:{
-        	id:'',
-            name:''
-        },
+        admin:"",
         menuList:null,
         contentUrl:"",
         contentName:"主页"
@@ -26,7 +23,7 @@ var vm = new Vue({
     },
     methods:{
         getAdmin:function () {
-            var url = prefixUrl+"hjyAdmin/getFromSession";
+            var url = prefixUrl+"admin/loginAdmin";
             axios.post(url)
                 .then(function (response) {
                 	console.log("import");

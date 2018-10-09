@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface AdminService {
      List<Admin> getAdminList();
+
+     Admin loginAdmin(Admin admin);
 }

@@ -3,7 +3,7 @@
 <mapper namespace="com.example.springbootdemo.mapper.AdminDao" >
     <resultMap id="resultMap" type="com.example.springbootdemo.domain.Admin">
         <id column="id" property="id" jdbcType="INTEGER" />
-        <result column="user_name" property="userName" jdbcType="VARCHAR" />
+        <result column="login_code" property="loginCode" jdbcType="VARCHAR" />
         <result column="login_name" property="loginName" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
         <result column="mobile" property="mobile" jdbcType="VARCHAR"/>
@@ -13,11 +13,19 @@
         <result column="last_login_time" property="lastLoginTime"/>
     </resultMap>
     <sql id="table_name">tb_admin</sql>
-    <sql id="all_columns">id,user_name,login_name,password,mobile,admin_level,create_time,update_time,last_login_time</sql>
+    <sql id="all_columns">id,login_code,login_name,password,mobile,admin_level,create_time,update_time,last_login_time</sql>
 
     <select id="getAdminList"  resultMap="resultMap">
         SELECT <include refid="all_columns"/>
         FROM <include refid="table_name"/>
-  </select>
+    </select>
+
+    <select id="loginAdmin" resultMap="resultMap">
+        select <include refid="all_columns"/>
+        from <include refid="table_name"/>
+        where login_code = #{loginCode}
+        and password = #{password}
+
+    </select>
 </mapper>
 

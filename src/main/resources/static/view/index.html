@@ -13,6 +13,50 @@
                 <div class="admin-side-toggle">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </div>
+                <div class="admin-side-full">
+                    <i class="fa fa-life-bouy" aria-hidden="true"></i>
+                </div>
+            </div>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:void(0)">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        {{admin.loginCode}}
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:void(0)" @click="openIframePw()">修改密码</a></dd>
+                        <dd><a href="javascript:void(0)" @click="loginOut()">退出</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree"  lay-filter="test" >
+                    <li class="layui-nav-item layui-nav-itemed" v-for="menu in menuList" v-cloak>
+                        <a href="javascript:void(0)"  >{{menu.menuName}}</a>
+                        <dl class="layui-nav-child" v-for="item in menu.menuList">
+                            <dd><a href="javascript:void(0)"  @click="openIframe(item)">{{item.menuName}}</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <div class="layui-tab layui-tab-brief main-layout-tab" lay-filter="tab" >
+                <ul class="layui-tab-title">
+                    <li class="layui-this welcome">{{contentName}}</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show" style="background: #f5f5f5;">
+                        <!--1-->
+                        <iframe v-bind:src="contentUrl" width="100%" height="1000px" name="iframe" scrolling="auto" class="iframe" framborder="0"
+                                style=" border-top-width: 0px;  border-left-width: 0px;   border-right-width: 0px; border-bottom-width: 0px; "></iframe>
+                        <!--1end-->
+                    </div>
+                </div>
             </div>
         </div>
     </div>

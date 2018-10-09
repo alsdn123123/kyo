@@ -7,7 +7,7 @@ public class Admin implements Serializable {
     /**主键*/
     private Integer id;
     /**用户名*/
-    private String userName;
+    private String loginCode;
     /**登录名*/
     private String loginName;
     /**密码*/
@@ -31,12 +31,12 @@ public class Admin implements Serializable {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getLoginCode() {
+        return loginCode;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setLoginCode(String loginCode) {
+        this.loginCode = loginCode;
     }
 
     public String getLoginName() {
