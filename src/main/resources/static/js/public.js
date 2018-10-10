@@ -64,7 +64,7 @@ var vm = new Vue({
                     console.log(response.data);
                     if(response.data.errcode=='0'){
                         layer.msg(response.data.errmsg, {icon: 1,time: 1000});
-                        window.location.href=prefixUrl+"index/hjyback";
+                        window.location.href=prefixUrl+"login";
                     }else{
                         layer.msg(response.data.errmsg, {icon: 5,time: 1000,anim: 6});
                     }
@@ -86,7 +86,7 @@ var vm = new Vue({
         
         openIframePw:function () {
         	console.log(vm.admin.id);
-            vm.contentUrl=prefixUrl+'/hjyAdmin/updateOnePw?id='+vm.admin.id;
+            vm.contentUrl=prefixUrl+'/admin/modifyPwd?id='+vm.admin.id;
             vm.contentName='密码修改';
         }
     }

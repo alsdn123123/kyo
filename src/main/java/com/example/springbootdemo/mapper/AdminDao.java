@@ -12,4 +12,6 @@ public interface AdminDao {
     List<Admin> getAdminList();
 
     Admin loginAdmin(Admin admin);
+
+    Admin getAdminById(String id);
 }

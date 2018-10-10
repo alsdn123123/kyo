@@ -8,4 +8,6 @@ public interface AdminService {
      List<Admin> getAdminList();
 
      Admin loginAdmin(Admin admin);
+
+     Admin getAdminById(String id);
 }

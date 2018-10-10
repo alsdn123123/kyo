@@ -1,4 +1,3 @@
-var prefixUrl = "http://localhost:8089/";
 layui.use(['layer', 'form'], function() {
     var form = layui.form,layer = layui.layer;
     //自定义验证规则

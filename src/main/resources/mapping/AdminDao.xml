@@ -25,7 +25,12 @@
         from <include refid="table_name"/>
         where login_code = #{loginCode}
         and password = #{password}
+    </select>
 
+    <select id="getAdminById" resultMap="resultMap">
+        select <include refid="all_columns"/>
+        from <include refid="table_name"/>
+        where id = #{id}
     </select>
 </mapper>
 
